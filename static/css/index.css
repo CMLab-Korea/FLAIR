@@ -174,11 +174,14 @@ body {
 .ba-left { z-index: 1; }
 .ba-right {
   z-index: 2;
-  clip-path: inset(0 0 0 50%);
+  clip-path: inset(0 0 0 var(--split, 50%));
 }
 .ba-divider {
-  position: absolute; top: 0; bottom: 0;
-  left: 50%; width: 2px; z-index: 3;
+  position: absolute;
+  top: 0; bottom: 0;
+  left: var(--split, 50%);
+  width: 2px;
+  z-index: 3;
   background: rgba(255,255,255,.85);
   box-shadow: 0 0 0 1px rgba(0,0,0,.2);
   transform: translateX(-1px);
