@@ -82,22 +82,20 @@
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Demo</h2>
 
-    <div class="ba-wrapper" aria-label="before-after image comparison">
-      <div class="ba-media">
-        <!-- 왼쪽 이미지 -->
-        <img class="ba-left" src="./static/images/demo_lr.png" alt="Low-resolution input">
-        <!-- 오른쪽 이미지 -->
+    <div class="ba-wrapper">
+      <div class="ba-media" style="--split: 50%;">
+        <!-- 왼쪽(LR) -->
+        <img class="ba-left"  src="./static/images/demo_lr.png"  alt="Low-resolution input">
+        <!-- 오른쪽(HR) -->
         <img class="ba-right" src="./static/images/demo_res.png" alt="Restored output">
 
-        <div class="ba-divider" id="baDivider">
-          <div class="ba-handle" aria-hidden="true"></div>
-        </div>
+        <!-- 경계선 & 핸들 -->
+        <div class="ba-divider"><div class="ba-handle"></div></div>
 
+        <!-- 라벨 -->
         <div class="ba-badge ba-badge-left">Zoomed blurry LR image</div>
         <div class="ba-badge ba-badge-right">FLAIR results</div>
       </div>
-
-      <input id="baRange" class="slider is-fullwidth is-info" type="range" min="0" max="100" value="50" step="1"/>
     </div>
   </div>
 </section>
