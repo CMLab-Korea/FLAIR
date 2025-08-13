@@ -392,31 +392,38 @@ document.addEventListener('DOMContentLoaded', function () {
       const rect = media.getBoundingClientRect();
       const clientX = e.touches ? e.touches[0].clientX : e.clientX;
       let pct = ((clientX - rect.left) / rect.width) * 100;
-      pct = Math.max(0, Math.min(100, pct)); // 0~100 제한
+      pct = Math.max(0, Math.min(100, pct));      // 0~100 제한
+
+      // 분할선 이동
       media.style.setProperty('--split', pct + '%');
 
-      // 선택사항: divider/clip-path도 함께 갱신하려면 아래 주석 해제
-      const right = media.querySelector('.ba-right');
+      // ★ 방향 수정: 왼쪽으로 끌수록 FLAIR(오른쪽)가 더 많이 보이게
+      const right   = media.querySelector('.ba-right');
       const divider = media.querySelector('.ba-divider');
-      if (right)   right.style.clipPath = `inset(0 0 0 ${100 - pct}%)`;
-      if (divider) divider.style.left = pct + '%';
+      if (right)   right.style.clipPath = `inset(0 0 0 ${pct}%)`; // ← 기존 100 - pct를 pct로
+      if (divider) divider.style.left    = pct + '%';
+
+      // ★ 배지 가시성 (여백 고려해 임계값 약간 둠)
+      const leftBadge  = media.querySelector('.ba-badge-left');   // "Input"
+      const rightBadge = media.querySelector('.ba-badge-right');  // "FLAIR"
+      if (leftBadge)  leftBadge.style.opacity  = (pct > 22) ? 1 : 0;  // FLAIR가 대부분 덮으면 숨김
+      if (rightBadge) rightBadge.style.opacity = (pct < 78) ? 1 : 0;  // Input이 대부분이면 숨김
     }
 
     const start = (e) => { dragging = true; setSplitFromEvent(e); };
     const move  = (e) => { if (dragging) setSplitFromEvent(e); };
     const end   = () => { dragging = false; };
 
-    // 영역 아무데나 드래그 가능 + 터치 지원
     media.addEventListener('mousedown', start);
     window.addEventListener('mousemove', move);
     window.addEventListener('mouseup', end);
 
     media.addEventListener('touchstart', start, { passive: true });
-    window.addEventListener('touchmove', move, { passive: true });
-    window.addEventListener('touchend', end);
+    window.addEventListener('touchmove',  move,  { passive: true });
+    window.addEventListener('touchend',   end);
   }
 
-  // ★ 모든 .ba-media에 적용
+  // 모든 슬라이더에 적용
   document.querySelectorAll('.ba-media').forEach(setupSlider);
 });
 </script>
