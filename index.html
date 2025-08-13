@@ -206,25 +206,6 @@
   </div>
 </section>
 
-<!-- Visual Effects (섹션 제대로 닫기) -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- Analysis (새 섹션 시작) -->
 <section class="section">
@@ -238,20 +219,20 @@
           <div class="column is-half">
             <div class="figure-box" style="display:flex; justify-content:center;">
               <div style="width:100%; max-width:700px;">
-                <img src="./static/images/fft.png"
+                <img id="fft-img" src="./static/images/fft.png"
                      alt="FFT Analysis"
                      style="display:block; width:100%; height:auto; border-radius:8px;">
               </div>
             </div>
           </div>
 
-          <!-- NTK -->
+          <!-- NTK (FFT 크기에 맞춤) -->
           <div class="column is-half">
             <div class="figure-box" style="display:flex; justify-content:center;">
               <div style="width:100%; max-width:700px;">
-                <img src="./static/images/ntk.png"
+                <img id="ntk-img" src="./static/images/ntk.png"
                      alt="NTK Analysis"
-                     style="display:block; width:100%; height:auto; border-radius:8px;">
+                     style="display:block; width:auto; height:auto; border-radius:8px; object-fit:contain; margin:0 auto;">
               </div>
             </div>
           </div>
@@ -262,17 +243,35 @@
   </div>
 </section>
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
-  </div>
-</section>
+<script>
+  // FFT 표시 높이에 맞춰 NTK 높이를 동기화
+  (function syncNTKtoFFT() {
+    const fft = document.getElementById('fft-img');
+    const ntk = document.getElementById('ntk-img');
+
+    function apply() {
+      if (!fft || !ntk) return;
+      // FFT의 렌더된 높이
+      const h = fft.getBoundingClientRect().height;
+      // NTK를 같은 높이로, 비율 유지(가로는 자동)
+      ntk.style.height = h + 'px';
+      ntk.style.width  = 'auto';
+      ntk.style.objectFit = 'contain';
+      ntk.style.display = 'block';
+      ntk.style.margin  = '0 auto'; // 가운데 정렬
+    }
+
+    // 이미지 로드 후 & 리사이즈 시 반영
+    if (fft.complete) apply();
+    else fft.addEventListener('load', apply);
+
+    if (ntk.complete) apply();
+    else ntk.addEventListener('load', apply);
+
+    window.addEventListener('resize', apply);
+  })();
+</script>
+
 
 
 <footer class="footer">
