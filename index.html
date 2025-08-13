@@ -60,21 +60,28 @@
     </p>
 
   <!-- Optional Paper & Code Icons -->
-  <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 4rem;">
+  <div style="
+    margin-top: 1rem;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    column-gap: 6rem;
+    align-items: end;              /* 두 카드의 '아래(=텍스트 라인)'를 맞춤 */
+  ">
     <!-- Paper -->
-    <a href="link-to-your-paper.pdf" style="display: flex; align-items: center; flex-direction: column; text-align: center;">
-      <div style="display: flex; align-items: center; flex-direction: column;">
-        <img src="static/images/paper.png" alt="Paper" width="80" style="margin-bottom: 0.5rem;">
-        <span>Paper</span>
-      </div>
+    <a href="link-to-your-paper.pdf" style="
+       display:flex; flex-direction:column; align-items:center; text-align:center;">
+      <img src="static/images/paper.png" alt="Paper" 
+           style="display:block; height:88px; width:auto; margin-bottom:8px;">
+      <span style="font-size:1.25rem; line-height:1;">Paper</span>
     </a>
   
     <!-- Code -->
-    <a href="https://github.com/your-repo" style="display: flex; align-items: center; flex-direction: column; text-align: center;">
-      <div style="display: flex; align-items: center; flex-direction: column;">
-        <img src="static/images/github.png" alt="Code" width="80" style="margin-bottom: 0.5rem;">
-        <span>Code</span>
-      </div>
+    <a href="https://github.com/your-repo" style="
+       display:flex; flex-direction:column; align-items:center; text-align:center;">
+      <img src="static/images/github.png" alt="Code" 
+           style="display:block; height:88px; width:auto; margin-bottom:8px;">
+      <span style="font-size:1.25rem; line-height:1;">Code</span>
     </a>
   </div>
   </div>
