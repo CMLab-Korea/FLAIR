@@ -216,32 +216,9 @@ body {
 
 
 
-
-/* 카드 컨테이너를 위치 기준으로 */
-.ba-card {
-  position: relative;
-}
-
-/* 중앙 오버레이 텍스트 */
-.demo-title-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.3rem;
+.demo-title-top {
+  text-align: center;
   font-weight: bold;
-  color: white;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
-  pointer-events: none; /* 슬라이드 드래그 방해 방지 */
-  z-index: 5;
-}
-
-/* 가독성 위해 배경 그라데이션 살짝 */
-.demo-title-overlay::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
-  z-index: -1;
-  border-radius: 8px;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
 }
