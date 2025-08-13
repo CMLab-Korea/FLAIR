@@ -385,25 +385,39 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const media = document.querySelector('.ba-media');
-  let dragging = false;
+  function setupSlider(media) {
+    let dragging = false;
 
-  function setSplitFromEvent(e) {
-    const rect = media.getBoundingClientRect();
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-    let pct = ((clientX - rect.left) / rect.width) * 100;
-    pct = Math.max(0, Math.min(100, pct)); // 0~100 제한
-    media.style.setProperty('--split', pct + '%');
+    function setSplitFromEvent(e) {
+      const rect = media.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      let pct = ((clientX - rect.left) / rect.width) * 100;
+      pct = Math.max(0, Math.min(100, pct)); // 0~100 제한
+      media.style.setProperty('--split', pct + '%');
+
+      // 선택사항: divider/clip-path도 함께 갱신하려면 아래 주석 해제
+      const right = media.querySelector('.ba-right');
+      const divider = media.querySelector('.ba-divider');
+      if (right)   right.style.clipPath = `inset(0 0 0 ${100 - pct}%)`;
+      if (divider) divider.style.left = pct + '%';
+    }
+
+    const start = (e) => { dragging = true; setSplitFromEvent(e); };
+    const move  = (e) => { if (dragging) setSplitFromEvent(e); };
+    const end   = () => { dragging = false; };
+
+    // 영역 아무데나 드래그 가능 + 터치 지원
+    media.addEventListener('mousedown', start);
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', end);
+
+    media.addEventListener('touchstart', start, { passive: true });
+    window.addEventListener('touchmove', move, { passive: true });
+    window.addEventListener('touchend', end);
   }
 
-  media.addEventListener('mousedown', (e) => { dragging = true; setSplitFromEvent(e); });
-  media.addEventListener('touchstart', (e) => { dragging = true; setSplitFromEvent(e); }, {passive:true});
-
-  window.addEventListener('mousemove', (e) => { if (dragging) setSplitFromEvent(e); });
-  window.addEventListener('touchmove', (e) => { if (dragging) setSplitFromEvent(e); }, {passive:true});
-
-  window.addEventListener('mouseup', () => dragging = false);
-  window.addEventListener('touchend', () => dragging = false);
+  // ★ 모든 .ba-media에 적용
+  document.querySelectorAll('.ba-media').forEach(setupSlider);
 });
 </script>
   
