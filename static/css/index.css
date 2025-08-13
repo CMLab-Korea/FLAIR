@@ -186,6 +186,7 @@ body {
   box-shadow: 0 0 0 1px rgba(0,0,0,.2);
   transform: translateX(-1px);
   pointer-events: none;
+  touch-action: none; /* ← 추가 */
 }
 .ba-handle {
   position: absolute; top: 50%;
@@ -204,6 +205,9 @@ body {
 .ba-badge-left { left: 12px; }
 .ba-badge-right { right: 12px; }
 #baRange { margin-top: 12px; }
+
+
+
 
 .figure-box img{
   display:block;
