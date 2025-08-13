@@ -215,10 +215,23 @@ body {
 
 
 
+/* 각 카드 상단 중앙에 제목 */
+.demo-title-top{
+  text-align:center;
+  font-weight:700;
+  font-size:1.1rem;
+  margin:0 0 .5rem 0; /* 제목-슬라이더 간격 */
+  line-height:1.2;
+}
 
-.demo-title-top {
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+/* 선택: 카드 전체 미묘한 여백/라운딩(슬라이더 스타일에 맞춰 보정) */
+.ba-card{ 
+  /* 필요시 padding-top 추가 가능 */
+}
+
+/* 선택: 슬라이더 최소 높이 보정(이미지가 없을 때 자리 유지) */
+.ba-wrapper .ba-media{
+  min-height:220px;          /* 필요 시 조절 */
+  border-radius:12px;
+  overflow:hidden;
 }
