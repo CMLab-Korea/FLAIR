@@ -257,6 +257,19 @@
           </div>
         </div>
 
+        <!-- 설명 문단 -->
+        <div style="display:flex; justify-content:center; margin-bottom: 3rem;">
+          <div style="width:100%; max-width:700px;">
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; text-align: justify;">
+              Short-Time Fourier Transform (STFT) experiments are conducted to analyze how well a model preserves localized frequency content along both the spatial and frequency axes. 
+              In this setting, a 1D horizontal scan line from the original image (y = 256) is processed using a 256-sample Hann window with 75% overlap (hop size = 64), 
+              where the y-axis of the STFT plot represents normalized frequency, with larger values indicating higher frequencies. 
+              While FINER fails to accurately capture the high-frequency components present in the ground truth, 
+              FLAIR produces an expression closely resembling the ground truth, demonstrating better preservation of localized high-frequency details.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
