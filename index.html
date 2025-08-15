@@ -282,8 +282,20 @@
           </div>
         </div>
         <p style="margin-top: 8px; font-size: 0.9rem; text-align: justify;">
-          The first is RC-GAUSS (b), a novel activation designed for explicit frequency selection and spatial localization under the constraints of the time-frequency uncertainty principle (TFUP), which integrates the raised cosine (RC) function for band-limited frequency selectivity.
-          The RC provides clear frequency selectivity, while it suffers from infinite oscillations inherent to band-limited functions, which are effectively attenuated by multiplication with a Gaussian envelope for time localization.
+          The first is <strong>RC-GAUSS</strong> (b), a novel activation designed for explicit frequency selection 
+          and spatial localization under the constraints of the time-frequency uncertainty principle (TFUP), 
+          which integrates the raised cosine (RC) function for band-limited frequency selectivity.
+          The RC provides clear frequency selectivity, while it suffers from infinite oscillations inherent to 
+          band-limited functions, which are effectively attenuated by multiplication with a Gaussian envelope 
+          for time localization.
+        </p>
+        
+        <p style="margin-top: 8px; font-size: 0.9rem; text-align: justify;">
+          The second is <strong>WEGE</strong> (c), which leverages the discrete wavelet transform (DWT) to compute 
+          energy scores and explicitly guide frequency information to the network. The computed score map, 
+          exhibiting edge-aware properties, is concatenated with the coordinates (x, y) to form (x, y, W<sub>b</sub>) 
+          for encoding. However, pixel-wise concatenation of the score map often leads to discontinuities, and to 
+          mitigate this, we apply a filtering operation to the scores.
         </p>
 
       </div>
