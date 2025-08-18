@@ -174,11 +174,18 @@
             components early while struggling to capture fine high-frequency details.
           </p>
           <p>
-            To address these issues, we propose FLAIR (Frequency- and Locality-Aware Implicit Neural Representations), 
-            which incorporates two key innovations. The first is RC-GAUSS, a novel activation designed for explicit frequency 
-            selection and spatial localization under the constraints of the time-frequency uncertainty principle (TFUP). 
-            The second is Wavelet-Energy-Guided Encoding (WEGE), which leverages the discrete wavelet transform (DWT) to 
-            compute energy scores and explicitly guide frequency information to the network.
+            <strong>1) RC-GAUSS (b).</strong> A novel activation designed for explicit frequency selection and spatial localization 
+            under the constraints of the time-frequency uncertainty principle (TFUP). It integrates the raised cosine (RC) function 
+            for band-limited frequency selectivity <span style="color:red">(red box)</span>. While the RC provides clear frequency selectivity, 
+            it suffers from infinite oscillations inherent to band-limited functions, which are effectively attenuated by multiplication 
+            with a Gaussian envelope for time localization <span style="color:blue">(blue box)</span>.
+          </p>
+          
+          <p>
+            <strong>2) WEGE (c).</strong> A wavelet-energy-guided encoding module that leverages the discrete wavelet transform (DWT) 
+            to compute energy scores and explicitly guide frequency information to the network. The computed score map, exhibiting 
+            edge-aware properties, is concatenated with the coordinates (x, y) to form (x, y, W<sub>b</sub>) for encoding. However, 
+            direct pixel-wise concatenation often leads to discontinuities; to mitigate this, we apply a filtering operation to the scores.
           </p>
           <p>
             Our method consistently outperforms existing INRs in 2D image representation and restoration, as well as 3D reconstruction.
