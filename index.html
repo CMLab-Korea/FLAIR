@@ -143,35 +143,41 @@
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered">
       <div class="column is-four-fifths">
 
-        <!-- TL;DR 추가 -->
-        <p style="color:#0D207F; font-weight:600; margin-bottom:1rem;">
+        <!-- TL;DR -->
+        <p style="color:#0D207F; font-weight:600; font-size:1.05rem; margin-bottom:1rem;">
           TL;DR: We introduce FLAIR, combining RC-GAUSS and Wavelet-Energy-Guided Encoding (WEGE) 
           to achieve frequency selectivity and spatial localization, effectively reducing spectral bias 
           in implicit neural representations.
         </p>
 
+        <!-- 제목 -->
         <h2 class="title is-3" style="margin-top: 2rem;">Abstract</h2>
 
-        <!-- 이미지 추가 -->
-        <figure style="text-align:center;">
+        <!-- 이미지 -->
+        <figure style="text-align:center; margin:1.2rem 0;">
           <img src="static/images/rc_gauss_no_eq.png" 
                alt="RC-GAUSS Diagram" 
                style="width:96%; border-radius:8px;">
         </figure>
 
+        <!-- 본문 -->
         <div class="content has-text-justified">
           <p>
-            Implicit Neural Representations (INRs) leverage neural networks to map coordinates to corresponding signals, enabling continuous and compact representations. This paradigm has driven significant advances in various vision tasks.
-            However, existing INRs lack frequency selectivity, spatial localization, and sparse representations, leading to an over-reliance on redundant signal components.
-            Consequently, they exhibit spectral bias, tending to learn low-frequency components early while struggling to capture fine high-frequency details.
+            Implicit Neural Representations (INRs) leverage neural networks to map coordinates to corresponding signals, 
+            enabling continuous and compact representations. This paradigm has driven significant advances in various vision tasks. 
+            However, existing INRs lack frequency selectivity, spatial localization, and sparse representations, leading to an 
+            over-reliance on redundant signal components. Consequently, they exhibit spectral bias, tending to learn low-frequency 
+            components early while struggling to capture fine high-frequency details.
           </p>
           <p>
-            To address these issues, we propose FLAIR (Frequency- and Locality-Aware Implicit Neural Representations), which incorporates two key innovations.
-            The first is RC-GAUSS, a novel activation designed for explicit frequency selection and spatial localization under the constraints of the time-frequency uncertainty principle (TFUP).
-            The second is Wavelet-Energy-Guided Encoding (WEGE), which leverages the discrete wavelet transform (DWT) to compute energy scores and explicitly guide frequency information to the network.
+            To address these issues, we propose FLAIR (Frequency- and Locality-Aware Implicit Neural Representations), 
+            which incorporates two key innovations. The first is RC-GAUSS, a novel activation designed for explicit frequency 
+            selection and spatial localization under the constraints of the time-frequency uncertainty principle (TFUP). 
+            The second is Wavelet-Energy-Guided Encoding (WEGE), which leverages the discrete wavelet transform (DWT) to 
+            compute energy scores and explicitly guide frequency information to the network.
           </p>
           <p>
             Our method consistently outperforms existing INRs in 2D image representation and restoration, as well as 3D reconstruction.
