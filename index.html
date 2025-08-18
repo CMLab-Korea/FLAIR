@@ -282,9 +282,9 @@
           </div>
         </div>
         <p class="has-text-left" style="margin-top:8px; font-size:0.9rem;">
-          <strong><span style="color:#0D207F;">FLAIR</span></strong>’s overall architecture (a) comprises the proposed nonlinear function 
-          <strong><span style="color:#0D207F;">RC-GAUSS</span></strong> (b) and the 
-          <strong><span style="color:#0D207F;">Wavelet-Energy-Guided Encoding (WEGE)</span></strong> module (c).
+          FLAIR’s overall architecture (a) comprises the proposed nonlinear function 
+          RC-GAUSS (b) and the 
+          Wavelet-Energy-Guided Encoding (WEGE) module (c).
         </p>
         <!-- Figure 2: Module details -->
         <div class="figure-box" style="display:flex; justify-content:center; margin-top: 1.5rem; margin-bottom: 1rem;">
@@ -295,7 +295,7 @@
           </div>
         </div>
         <p style="margin-top: 8px; font-size: 0.9rem; text-align: justify;">
-          The first is <strong><span style="color:#0D207F;">RC-GAUSS</span></strong> (b), a novel activation designed for explicit frequency selection 
+          The first is RC-GAUSS (b), a novel activation designed for explicit frequency selection 
           and spatial localization under the constraints of the time-frequency uncertainty principle (TFUP). 
           It integrates the raised cosine (RC) function to achieve band-limited frequency selectivity 
           <span style="color:red">(red box)</span>. 
@@ -306,7 +306,7 @@
         </p>
         
         <p style="margin-top: 8px; margin-bottom: 1.5rem; font-size: 0.9rem; text-align: justify;">
-          The second is <strong><span style="color:#0D207F;">WEGE</span></strong> (c), which leverages the discrete wavelet transform (DWT) to compute 
+          The second is WEGE (c), which leverages the discrete wavelet transform (DWT) to compute 
           energy scores and explicitly guide frequency information to the network. The computed score map, 
           exhibiting edge-aware properties, is concatenated with the coordinates (x, y) to form (x, y, W<sub>b</sub>) 
           for encoding. However, pixel-wise concatenation of the score map often leads to discontinuities, and to 
@@ -352,12 +352,12 @@
         <div style="display:flex; justify-content:center; margin-bottom: 3rem;">
           <div style="width:100%; max-width:700px;">
             <p style="margin-top: 0.5rem; font-size: 0.9rem; text-align: justify;">
-              FLAIR neurons after FFT exhibit distinct frequency responses in the Fourier domain, enabling sparse representations. 
+              FLAIR neurons after <strong><span style="color:#0D207F;">FFT</span></strong> exhibit distinct frequency responses in the <strong><span style="color:#0D207F;">Fourier domain</span></strong>, enabling sparse representations. 
               To validate this, we conducted image fitting experiments with hidden features set to 64, 128, and 256, as shown in the second row. 
-              Compared with the state-of-the-art FINER model, FLAIR achieved higher PSNR and SSIM, and lower LPIPS across all settings, 
+              Compared with the state-of-the-art <strong><span style="color:#0D207F;">FINER</span></strong> model, <strong><span style="color:#0D207F;">FLAIR</span></strong> achieved higher PSNR and SSIM, and lower LPIPS across all settings, 
               with the performance gap widening at 64 and 128 hidden features. 
-              This demonstrates that FLAIR can represent images more efficiently with sparse neurons, 
-              supported by the diverse frequency responses revealed through FFT.
+              This demonstrates that <strong><span style="color:#0D207F;">FLAIR</span></strong> can represent images more <strong><span style="color:#0D207F;">efficiently with sparse neurons</span></strong>, 
+              supported by the <strong><span style="color:#0D207F;">diverse frequency responses</span></strong> revealed through FFT.
             </p>
           </div>
         </div>
