@@ -174,10 +174,10 @@
             components early while struggling to capture fine high-frequency details.
           </p>
           <p>
-            To address these issues, we propose <strong><span style="color:#0D207F;">FLAIR</span></strong> (Frequency- and Locality-Aware Implicit Neural Representations), 
-            which incorporates two key innovations. The first is <strong><span style="color:#0D207F;">RC-GAUSS</span></strong>, a novel activation designed for explicit frequency 
-            selection and spatial localization under the constraints of the <strong><span style="color:#0D207F;">time-frequency uncertainty principle</span></strong> (TFUP). 
-            The second is <strong><span style="color:#0D207F;">Wavelet-Energy-Guided Encoding</span></strong> (WEGE), which leverages the <strong><span style="color:#0D207F;">discrete wavelet transform</span></strong> (DWT) to 
+            To address these issues, we propose <strong>FLAIR</strong> (Frequency- and Locality-Aware Implicit Neural Representations), 
+            which incorporates two key innovations. The first is <strong>RC-GAUSS</strong>, a novel activation designed for explicit frequency 
+            selection and spatial localization under the constraints of the <strong>time-frequency uncertainty principle</strong> (TFUP). 
+            The second is <strong>Wavelet-Energy-Guided Encoding</strong> (WEGE), which leverages the <strong>discrete wavelet transform</strong> (DWT) to 
             compute energy scores and explicitly guide frequency information to the network.
           </p>
           <p>
@@ -259,7 +259,7 @@
         <p style="margin-top: 8px; font-size: 0.9rem; text-align: justify;">
           The image fitting task aims to learn a 2D function mapping pixel coordinates to RGB values, 
           minimizing the L<sub>2</sub> distance between predictions and ground truth.
-          Visualization results are shown for a 512×512 DIV2K image. FLAIR demonstrates the most fine-grained and detailed reconstruction capability, with quantitative results reported in the order <strong><span style="color:#0D207F;">PSNR (dB) ↑ / SSIM ↑ / LPIPS ↓</span></strong>, showing that it achieves state-of-the-art performance across all metrics.
+          Visualization results are shown for a 512×512 DIV2K image. FLAIR demonstrates the most fine-grained and detailed reconstruction capability, with quantitative results reported in the order <strong>PSNR (dB) ↑ / SSIM ↑ / LPIPS ↓</strong>, showing that it achieves state-of-the-art performance across all metrics.
         </p>
       </div>
     </div>
@@ -352,12 +352,12 @@
         <div style="display:flex; justify-content:center; margin-bottom: 3rem;">
           <div style="width:100%; max-width:700px;">
             <p style="margin-top: 0.5rem; font-size: 0.9rem; text-align: justify;">
-              <strong><span style="color:#0D207F;">FLAIR</span></strong> neurons after <strong><span style="color:#0D207F;">FFT</span></strong> exhibit distinct frequency responses in the <strong><span style="color:#0D207F;">Fourier domain</span></strong>, enabling sparse representations. 
+              <strong>FLAIR</strong> neurons after <strong>FFT</strong> exhibit distinct frequency responses in the <strong>Fourier domain</strong>, enabling <strong>sparse representations</strong>. 
               To validate this, we conducted image fitting experiments with hidden features set to 64, 128, and 256, as shown in the second row. 
-              Compared with the state-of-the-art <strong><span style="color:#0D207F;">FINER</span></strong> model, <strong><span style="color:#0D207F;">FLAIR</span></strong> achieved higher PSNR and SSIM, and lower LPIPS across all settings, 
+              Compared with the state-of-the-art <strong>FINER</strong> model, <strong>FLAIR</strong> achieved higher PSNR and SSIM, and lower LPIPS across all settings, 
               with the performance gap widening at 64 and 128 hidden features. 
-              This demonstrates that <strong><span style="color:#0D207F;">FLAIR</span></strong> can represent images more <strong><span style="color:#0D207F;">efficiently with sparse neurons</span></strong>, 
-              supported by the <strong><span style="color:#0D207F;">diverse frequency responses</span></strong> revealed through FFT.
+              This demonstrates that <strong>FLAIR</strong> can represent images more <strong>efficiently with sparse neurons</strong>, 
+              supported by the <strong>diverse frequency responses</strong> revealed through FFT.
             </p>
           </div>
         </div>
