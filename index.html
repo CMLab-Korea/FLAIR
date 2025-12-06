@@ -201,7 +201,7 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Demo</h2>
+    <h2 class="title is-3 has-text-centered">Restoration Demo</h2>
 
     <div class="columns is-variable is-6 is-multiline is-centered">
 
@@ -247,31 +247,6 @@
 </section>
 <!-- 이미지 비교 슬라이더 끝 -->
 
-  
-  
-<!-- fitting -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Image Fitting</h2>
-        <div class="figure-box" style="display:flex; justify-content:center;">
-          <div style="width:100%; max-width:1500px;">
-            <img src="./static/images/fitting.png"
-                 alt="2D Image Fitting"
-                 style="display:block; width:100%; height:auto; border-radius:8px;">
-          </div>
-        </div>
-        <p style="margin-top: 8px; font-size: 0.9rem; text-align: justify;">
-          The image fitting task aims to learn a 2D function mapping pixel coordinates to RGB values, 
-          minimizing the L<sub>2</sub> distance between predictions and ground truth.
-          Visualization results are shown for a 512×512 DIV2K image. FLAIR demonstrates the most fine-grained and detailed reconstruction capability, with quantitative results reported in the order <strong>PSNR (dB) ↑ / SSIM ↑ / LPIPS ↓</strong>, showing that it achieves state-of-the-art performance across all metrics.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Method (refactored with two figures) -->
 <section class="section">
   <div class="container is-max-desktop">
@@ -279,18 +254,16 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Method</h2>
 
-        <!-- Figure 1: Overall architecture -->
+        <!-- Figure 1: Band-Localized Activation -->
         <div class="figure-box" style="display:flex; justify-content:center; margin-bottom: 1rem;">
           <div style="width:100%; max-width:1500px;">
-            <img src="./static/images/ar_ch.png"
-                 alt="Overall Architecture"
+            <img src="./static/images/fig2.png"
+                 alt="BLA"
                  style="display:block; width:100%; height:auto; border-radius:8px;">
           </div>
         </div>
         <p class="has-text-left" style="margin-top:8px; font-size:0.9rem;">
-          FLAIR’s overall architecture (a) comprises the proposed nonlinear function 
-          RC-GAUSS (b) and the 
-          Wavelet-Energy-Guided Encoding (WEGE) module (c).
+          ****
         </p>
         <!-- Figure 2: Module details -->
         <div class="figure-box" style="display:flex; justify-content:center; margin-top: 1.5rem; margin-bottom: 1rem;">
