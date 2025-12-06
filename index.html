@@ -167,7 +167,7 @@
         <figure style="text-align:center; margin:1.2rem 0;">
           <img src="static/images/fig1.png" 
                alt="Overall Architecture" 
-               style="width:65%; border-radius:8px;">
+               style="width:55%; border-radius:8px;">
         </figure>
 
         <!-- 본문 -->
@@ -175,19 +175,19 @@
           <p>
             Implicit Neural Representations (INRs) leverage neural networks to map coordinates to corresponding signals, 
             enabling continuous and compact representations. This paradigm has driven significant advances in various vision tasks. 
-            However, existing INRs lack frequency selectivity, spatial localization, and sparse representations, leading to an 
+            However, existing INRs lack frequency selectivity and spatial localization leading to an 
             over-reliance on redundant signal components. Consequently, they exhibit spectral bias, tending to learn low-frequency 
             components early while struggling to capture fine high-frequency details.
           </p>
           <p>
             To address these issues, we propose <strong>FLAIR</strong> (Frequency- and Locality-Aware Implicit Neural Representations), 
-            which incorporates two key innovations. The first is <strong>RC-GAUSS</strong>, a novel activation designed for explicit frequency 
+            which incorporates two key innovations. The first is <strong>Band-Localized Activation</strong> (BLA), a novel activation designed for joint frequency 
             selection and spatial localization under the constraints of the <strong>time-frequency uncertainty principle</strong> (TFUP). 
             The second is <strong>Wavelet-Energy-Guided Encoding</strong> (WEGE), which leverages the <strong>discrete wavelet transform</strong> (DWT) to 
             compute energy scores and explicitly guide frequency information to the network.
           </p>
           <p>
-            Our method consistently outperforms existing INRs in 2D image representation and restoration, as well as 3D reconstruction.
+            Our method consistently outperforms existing INRs in 2D image representation, as well as 3D shape reconstruction and novel view synthesis. 
           </p>
         </div>
 
