@@ -181,7 +181,7 @@
           </p>
           <p>
             To address these issues, we propose <strong>FLAIR</strong> (Frequency- and Locality-Aware Implicit Neural Representations), 
-            which incorporates two key innovations. The first is <strong>Band-Localized Activation</strong> (BLA), a novel activation designed for joint frequency 
+            which incorporates two key innovations. The first is <strong>Band-Localized Activation (BLA)</strong>, a novel activation designed for joint frequency 
             selection and spatial localization under the constraints of the <strong>time-frequency uncertainty principle</strong> (TFUP). 
             The second is <strong>Wavelet-Energy-Guided Encoding</strong> (WEGE), which leverages the <strong>discrete wavelet transform</strong> (DWT) to 
             compute energy scores and explicitly guide frequency information to the network.
@@ -263,15 +263,14 @@
           </div>
         </div>
       <p class="has-text-left" style="margin-top:8px; font-size:0.9rem;">
-        Our proposed <strong>Band-Localized Activation (BLA)</strong> is one of the complementary components of FLAIR.
-        In <strong>(a)</strong>, BLA jointly modulates the frequency–time trade-off under TFUP through its learnable
-        parameters <code>(ζ, T, σ)</code>, achieving both precise frequency selectivity and time localization.
+        Our proposed Band-Localized Activation (BLA) is one of the complementary components of FLAIR.
+        In (a), <strong>BLA</strong> jointly modulates the frequency–time trade-off under TFUP through its learnable
+        parameters (ζ, T, σ), <strong>achieving both precise frequency selectivity and time localization.</strong>
       </p>
       
-      <p style="font-size:0.9rem;">
-        In <strong>(b)</strong>, the loss-landscape visualizations demonstrate that
-        <strong>BLA</strong> yields a <strong style="font-weight:600;">significantly flatter</strong> MSE loss surface than
-        <code>sinc</code>, indicating smoother and more stable optimization behavior.
+      <p class="has-text-left" style="margin-top:6px; font-size:0.9rem;">
+        In (b), the loss-landscape visualizations demonstrate that
+        <strong>BLA</strong> yields a significantly flatter MSE loss surface than sinc, <strong style="font-weight:600;">indicating smoother and more stable optimization behavior.</strong>
       </p>
         <!-- Figure 2: Module details -->
         <div class="figure-box" style="display:flex; justify-content:center; margin-top: 1.5rem; margin-bottom: 1rem;">
