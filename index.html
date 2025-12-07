@@ -271,22 +271,23 @@
         In (b), the loss-landscape visualizations demonstrate that
         <strong>BLA</strong> yields a significantly flatter MSE loss surface than sinc, <strong style="font-weight:600;">indicating smoother and more stable optimization behavior.</strong>
       </p>
-        <!-- Figure 2: Module details -->
+        <!-- Figure 2: WEGE -->
         <div class="figure-box" style="display:flex; justify-content:center; margin-top: 1.5rem; margin-bottom: 1rem;">
           <div style="width:100%; max-width:1500px;">
-            <img src="./static/images/WEGE.png"
+            <img src="./static/images/fig4.png"
                  alt="WEGE Details"
                  style="display:block; width:100%; height:auto; border-radius:8px;">
           </div>
         </div>
-        ****
-        <p style="margin-top: 8px; margin-bottom: 1.5rem; font-size: 0.9rem; text-align: justify;">
-          WEGE (c), which leverages the discrete wavelet transform (DWT) to compute 
-          energy scores and explicitly guide frequency information to the network. The computed score map, 
-          exhibiting edge-aware properties, is concatenated with the coordinates (x, y) to form (x, y, W<sub>b</sub>) 
-          for encoding. However, pixel-wise concatenation of the score map often leads to discontinuities, and to 
-          mitigate this, we apply a filtering operation to the scores.
-        </p>
+      <p class="has-text-left" style="margin-top:8px;">         
+        <strong>Wavelet-Energy-Guided Encoding</strong> (WEGE) module is one of the complementary components of FLAIR.
+        In (a), <strong>BLA</strong> jointly modulates the frequency–time trade-off under TFUP through its learnable parameters (ζ, T, σ), <strong>achieving both precise frequency selectivity and time localization.</strong>
+      </p>
+      
+      <p class="has-text-left" style="margin-top:8px;">
+        In (b), the loss-landscape visualizations demonstrate that
+        <strong>BLA</strong> yields a significantly flatter MSE loss surface than sinc, <strong style="font-weight:600;">indicating smoother and more stable optimization behavior.</strong>
+      </p>
 
       </div>
     </div>
