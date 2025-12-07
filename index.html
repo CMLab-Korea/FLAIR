@@ -262,17 +262,17 @@
                  style="display:block; width:100%; height:auto; border-radius:8px;">
           </div>
         </div>
-        <p class="has-text-left" style="margin-top:8px; font-size:0.9rem;">
-          ****
-          The first is RC-GAUSS (b), a novel activation designed for explicit frequency selection 
-          and spatial localization under the constraints of the time-frequency uncertainty principle (TFUP). 
-          It integrates the raised cosine (RC) function to achieve band-limited frequency selectivity 
-          <span style="color:red">(red box)</span>. 
-          While the RC provides clear frequency discrimination, it also suffers from infinite oscillations 
-          inherent to band-limited functions. These oscillations are effectively attenuated by multiplying 
-          the RC with a Gaussian envelope, enabling stable time localization 
-          <span style="color:blue">(blue box)</span>.
-        </p>
+      <p class="has-text-left" style="margin-top:8px; font-size:0.9rem;">
+        Our proposed <strong>Band-Localized Activation (BLA)</strong> is one of the complementary components of FLAIR.
+        In <strong>(a)</strong>, BLA jointly modulates the frequency–time trade-off under TFUP through its learnable
+        parameters <code>(ζ, T, σ)</code>, achieving both precise frequency selectivity and time localization.
+      </p>
+      
+      <p style="font-size:0.9rem;">
+        In <strong>(b)</strong>, the loss-landscape visualizations demonstrate that
+        <strong>BLA</strong> yields a <strong style="font-weight:600;">significantly flatter</strong> MSE loss surface than
+        <code>sinc</code>, indicating smoother and more stable optimization behavior.
+      </p>
         <!-- Figure 2: Module details -->
         <div class="figure-box" style="display:flex; justify-content:center; margin-top: 1.5rem; margin-bottom: 1rem;">
           <div style="width:100%; max-width:1500px;">
