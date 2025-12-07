@@ -280,13 +280,18 @@
           </div>
         </div>
       <p class="has-text-left" style="margin-top:8px;">         
-        <strong>Wavelet-Energy-Guided Encoding</strong> (WEGE) module is one of the complementary components of FLAIR.
-        In (a), <strong>BLA</strong> jointly modulates the frequency–time trade-off under TFUP through its learnable parameters (ζ, T, σ), <strong>achieving both precise frequency selectivity and time localization.</strong>
+        In (c), we describe the details of the <strong>Wavelet-Energy-Guided Encoding (WEGE)</strong> module. 
+        WEGE leverages the discrete wavelet transform to compute energy scores in a region-adaptive manner, 
+        guiding frequency information into the network to enable precise frequency selection and adaptive band control.
       </p>
       
       <p class="has-text-left" style="margin-top:8px;">
-        In (b), the loss-landscape visualizations demonstrate that
-        <strong>BLA</strong> yields a significantly flatter MSE loss surface than sinc, <strong style="font-weight:600;">indicating smoother and more stable optimization behavior.</strong>
+        In (d), we visualize the effect of Guided Filter hyperparameters on WEGE score maps. 
+        Since the wavelet-derived score map W̃b is directly concatenated to (x, y), 
+        without the Guided Filter, discontinuities occur and lead to visible artifacts in the final output. 
+        To prevent this, we set the Guided Filter hyperparameters to r = 6 and ϵ = 1e−5 to balance excessive sharpness and blur, 
+        reducing score discontinuities while preserving score fidelity and preventing RGB artifacts. 
+        Additional implementation details are provided in the main paper.
       </p>
 
       </div>
