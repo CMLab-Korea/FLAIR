@@ -286,12 +286,10 @@
       </p>
       
       <p class="has-text-left" style="margin-top:8px;">
-        In (d), we visualize the effect of Guided Filter hyperparameters on WEGE score maps. 
-        Since the wavelet-derived score map W̃b is directly concatenated to (x, y), 
-        without the Guided Filter, discontinuities occur and lead to visible artifacts in the final output. 
-        To prevent this, we set the Guided Filter hyperparameters to r = 6 and ϵ = 1e−5 to balance excessive sharpness and blur, 
-        reducing score discontinuities while preserving score fidelity and preventing RGB artifacts. 
-        Additional implementation details are provided in the main paper.
+        In (d), we visualize how Guided Filter hyperparameters affect WEGE score maps. 
+        Because the WEGE output W̃b is a pixel-wise score map, using it without filtering produces discontinuities
+        that appear as visible artifacts in the final RGB result. To address this, we use r = 6 and ϵ = 1e−5 for
+        the Guided Filter to balance sharpness and smoothness. Further details are provided in the main paper.
       </p>
 
       </div>
