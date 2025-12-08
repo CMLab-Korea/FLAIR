@@ -389,110 +389,52 @@
 
 
   
-<!-- Analysis (두 행으로 구성) -->
+<!-- Analysis -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
+
         <h2 class="title is-3">Analysis</h2>
 
         <p class="subtitle is-5 has-text-black has-text-centered"
            style="margin-top:1rem; margin-bottom:2.5rem; font-weight:600;">
-          Fast Fourier Transform Analysis of Learned Neurons
+          Frequency Behavior and Activation Characteristics
         </p>
+
+        <!-- Figure 6: NTK -->
+        <figure class="figure-box" style="width:100%; max-width:750px; margin:0 auto 2rem; text-align:center;">
+          <img src="./static/images/ntk.png"
+               alt="NTK Analysis"
+               style="display:block; width:100%; height:auto; border-radius:8px;">
+
+          <figcaption style="margin-top:0.6rem; font-size:0.95rem; color:#666;">
+            <strong>Figure 6.</strong> ***
+          </figcaption>
+        </figure>
+
+
         
-        <!-- FFT (첫 번째 행) -->
-        <div class="figure-box" style="display:flex; justify-content:center; margin-bottom: 2rem;">
-          <div style="width:100%; max-width:700px;">
-            <img id="fft-img" src="./static/images/fft.png"
-                 alt="FFT Analysis"
-                 style="display:block; width:100%; height:auto; border-radius:8px;">
-          </div>
-        </div>
+        <!-- Figure 7: FFT & Sparsity -->
+        <figure class="figure-box" style="width:100%; max-width:750px; margin:0 auto 2rem; text-align:center;">
+          <img src="./static/images/fft.png"
+               alt="FFT Analysis"
+               style="display:block; width:100%; height:auto; border-radius:8px; margin-bottom:1.5rem;">
+          <img src="./static/images/sparse.png"
+               alt="Sparsity Analysis"
+               style="display:block; width:100%; height:auto; border-radius:8px;">
 
-        <!-- SPARSE (두 번째 행) -->
-        <div class="figure-box" style="display:flex; justify-content:center; margin-bottom: 1rem;">
-          <div style="width:100%; max-width:700px;">
-            <img id="sparse-img" src="./static/images/sparse.png"
-                 alt="Sparsity Analysis"
-                 style="display:block; width:100%; height:auto; border-radius:8px;">
-          </div>
-        </div>
+          <figcaption style="margin-top:0.6rem; font-size:0.95rem; color:#666;">
+            <strong>Figure 7.</strong> ***
+          </figcaption>
+        </figure>
 
-        <!-- 설명 문단 -->
-        <div style="display:flex; justify-content:center; margin-bottom: 3rem;">
-          <div style="width:100%; max-width:700px;">
-            <p style="margin-top: 0.5rem; font-size: 0.9rem; text-align: justify;">
-              <strong>FLAIR</strong> neurons after <strong>FFT</strong> exhibit distinct frequency responses in the Fourier domain, enabling <strong>sparse representations</strong>. 
-              To validate this, we conducted image fitting experiments with hidden features set to 64, 128, and 256, as shown in the second row. 
-              Compared with the state-of-the-art <strong>FINER</strong> model, <strong>FLAIR</strong> achieved higher PSNR and SSIM, and lower LPIPS across all settings, 
-              with the performance gap widening at 64 and 128 hidden features. 
-              This demonstrates that <strong>FLAIR</strong> can represent images more <strong>efficiently with sparse neurons</strong>, 
-              supported by the <strong>diverse frequency responses</strong> revealed through FFT.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-        <!-- STFT (세 번째 행, 단일) -->
-        <div class="figure-box" style="display:flex; justify-content:center; margin-bottom: 1rem;">
-          <div style="width:100%; max-width:700px;">
-            <p class="subtitle is-5 has-text-black has-text-centered"
-               style="margin-top:-0.25rem; margin-bottom:2rem; font-weight:600;">
-              Short-Time Fourier Transform (STFT) experiments
-            </p>
-            <img id="stft-img" src="./static/images/stft.png"
-                 alt="STFT Analysis"
-                 style="display:block; width:100%; height:auto; border-radius:8px;">
-          </div>
-        </div>
-
-        <!-- 설명 문단 -->
-        <div style="display:flex; justify-content:center; margin-bottom: 0.5rem;">
-          <div style="width:100%; max-width:700px;">
-            <p style="margin-top: 0.5rem; font-size: 0.9rem; text-align: justify;">
-              <strong>Short-Time Fourier Transform</strong> (STFT) experiments are conducted to analyze how well a model preserves localized frequency content along both the spatial and frequency axes. 
-              In this setting, a 1D horizontal scan line from the original image (y = 256) is processed using a 256-sample Hann window with 75% overlap (hop size = 64), 
-              where the y-axis of the STFT plot represents normalized frequency, with larger values indicating higher frequencies. 
-              While <strong>FINER</strong> fails to accurately capture the high-frequency components present in the ground truth, 
-              <strong>FLAIR</strong> produces an expression closely resembling the ground truth, demonstrating better <strong>preservation of localized high-frequency details</strong>.
-            </p>
-          </div>
-        </div>
 
       </div>
     </div>
   </div>
 </section>
 
-<script>
-  // FFT 이미지 높이를 NTK에 맞춤
-  (function syncNTKtoFFT() {
-    const fft = document.getElementById('fft-img');
-    const ntk = document.getElementById('ntk-img');
-
-    function apply() {
-      if (!fft || !ntk) return;
-      const h = fft.getBoundingClientRect().height;
-      ntk.style.height = h + 'px';
-      ntk.style.width  = 'auto';
-      ntk.style.objectFit = 'contain';
-      ntk.style.display = 'block';
-      ntk.style.margin  = '0 auto';
-    }
-
-    if (fft.complete) apply();
-    else fft.addEventListener('load', apply);
-
-    if (ntk.complete) apply();
-    else ntk.addEventListener('load', apply);
-
-    window.addEventListener('resize', apply);
-  })();
-</script>
 
 
 <section class="section">
