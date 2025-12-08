@@ -308,36 +308,48 @@
 
         <p class="subtitle is-5 has-text-black has-text-centered"
            style="margin-top:1rem; margin-bottom:2.5rem; font-weight:600;">
-          Visual Comparisons Across Methods
+          Visual Comparisons Across Methods on Diverse Tasks
         </p>
 
         <!-- Row 1 (Images Row A) -->
-        <div class="figure-box" style="display:flex; justify-content:center; margin-bottom: 2rem;">
+        <figure class="figure-box" style="display:flex; justify-content:center; margin-bottom: 2rem;">
           <div style="width:100%; max-width:850px;">
             <img src="./static/images/fitting.png"
                  alt="Qualitative Results Row 1"
                  style="display:block; width:100%; height:auto; border-radius:8px;">
           </div>
-        </div>
+          <figcaption style="text-align:center; margin-top:0.6rem; font-size:0.95rem; color:#888;">
+            <strong>Figure 3.</strong> Qualitative comparison with other methods on the fitting task across the DIV2K and Kodak datasets. 
+            FLAIR produces the most faithful results without noise, enabled by the band-limited behavior of BLA, 
+            while other methods exhibit frequency leakage.
+          </figcaption>
+        </figure> 
 
-        <!-- Row 2 (Images Row B) -->
-        <div class="figure-box" style="display:flex; justify-content:center; margin-bottom: 1.6rem;">
-          <div style="width:100%; max-width:850px;">
-            <img src="./static/images/sdf.png"
-                 alt="Qualitative Results Row 2"
-                 style="display:block; width:100%; height:auto; border-radius:8px;">
-          </div>
-        </div>
-
-
-        <!-- Row 3 (Images Row B) -->
-        <div class="figure-box" style="display:flex; justify-content:center; margin-bottom: 1.6rem;">
+        <!-- Row 2 (NeRF) -->
+        <figure class="figure-box" style="display:flex; justify-content:center; margin-bottom: 2rem;">
           <div style="width:100%; max-width:850px;">
             <img src="./static/images/nerf.png"
                  alt="Qualitative Results Row 2"
                  style="display:block; width:100%; height:auto; border-radius:8px;">
           </div>
-        </div>
+          <figcaption style="text-align:center; margin-top:0.6rem; font-size:0.95rem; color:#888;">
+            <strong>Figure 4.</strong> Under the challenging setting of using only 25 input views instead of the default 100, FLAIR reconstructs unseen views without artifacts and preserves fine details.
+          </figcaption>
+        </figure>
+
+        
+        <!-- Row 3 (SDF) -->
+        <figure class="figure-box" style="display:flex; justify-content:center; margin-bottom: 2rem;">
+          <div style="width:100%; max-width:850px;">
+            <img src="./static/images/sdf.png"
+                 alt="Qualitative Results Row 2"
+                 style="display:block; width:100%; height:auto; border-radius:8px;">
+          </div>
+          <figcaption style="text-align:center; margin-top:0.6rem; font-size:0.95rem; color:#888;">
+            <strong>Figure 5.</strong> *** 
+          </figcaption>
+        </figure>
+
 
         <!-- Description -->
         <div style="display:flex; justify-content:center; margin-bottom: 3rem;">
