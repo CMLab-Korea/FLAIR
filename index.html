@@ -255,43 +255,34 @@
         <h2 class="title is-3">Method</h2>
 
         <!-- Figure 1: Band-Localized Activation -->
-        <div class="figure-box" style="display:flex; justify-content:center; margin-bottom: 1rem;">
-          <div style="width:100%; max-width:1500px;">
-            <img src="./static/images/fig2.png"
-                 alt="BLA"
-                 style="display:block; width:100%; height:auto; border-radius:8px;">
-          </div>
-        </div>
-      <p class="has-text-left" style="margin-top:8px;">
-        Our proposed <strong>Band-Localized Activation</strong> (BLA) is one of the complementary components of FLAIR.
-        In (a), <strong>BLA</strong> jointly modulates the frequency–time trade-off under TFUP through its learnable parameters (ζ, T, σ), <strong>achieving both precise frequency selectivity and time localization.</strong>
-      </p>
-      
-      <p class="has-text-left" style="margin-top:8px;">
-        In (b), the loss-landscape visualizations demonstrate that
-        <strong>BLA</strong> yields a significantly flatter MSE loss surface than sinc, <strong style="font-weight:600;">indicating smoother and more stable optimization behavior.</strong>
-      </p>
-        <!-- Figure 2: WEGE -->
-        <div class="figure-box" style="display:flex; justify-content:center; margin-top: 1.5rem; margin-bottom: 1rem;">
-          <div style="width:100%; max-width:1500px;">
-            <img src="./static/images/WEGE.png"
-                 alt="WEGE Details"
-                 style="display:block; width:100%; height:auto; border-radius:8px;">
-          </div>
-        </div>
-      <p class="has-text-left" style="margin-top:8px;">         
-        Figure (c), we describe the details of the <strong>Wavelet-Energy-Guided Encoding (WEGE)</strong> module. 
-        WEGE computes region-adaptive wavelet energy scores and integrates them into the network to enable precise 
-        frequency selection and adaptive band control.
-      </p>
-      
-      <p class="has-text-left" style="margin-top:8px;">
-        In (d), we visualize how Guided Filter hyperparameters affect WEGE score maps. 
-        Because the WEGE output W̃b is a pixel-wise score map, using it without filtering produces discontinuities
-        that appear as visible artifacts in the final RGB result. To address this, we use r = 6 and ϵ = 1e−5 for
-        the Guided Filter to balance sharpness and smoothness. Further details are provided in the main paper.
-      </p>
+        <figure class="figure-box" style="width:100%; max-width:1500px; margin:0 auto 2rem; text-align:center;">
+          <img src="./static/images/fig2.png"
+               alt="Band-Localized Activation Visualization"
+               style="display:block; width:100%; height:auto; border-radius:8px;">
+        
+          <figcaption style="margin-top:0.6rem; font-size:0.95rem; color:#666;">
+            <strong>Figure 1.</strong> Band-Localized Activation (BLA) as a component of FLAIR.
+            In (a), BLA jointly modulates the frequency–time trade-off under TFUP through its learnable parameters (ζ, T, σ), 
+            achieving both precise frequency selectivity and time localization. In (b), the loss-landscape visualizations show that 
+            BLA yields a significantly flatter MSE loss surface than sinc, indicating smoother and more stable optimization behavior.
+          </figcaption>
+        </figure>
 
+        <!-- Figure 2: WEGE -->
+        <figure class="figure-box" style="width:100%; max-width:1500px; margin:0 auto 2rem; text-align:center;">
+          <img src="./static/images/WEGE.png"
+               alt="WEGE Details"
+               style="display:block; width:100%; height:auto; border-radius:8px;">
+        
+          <figcaption style="margin-top:0.6rem; font-size:0.95rem; color:#666;">
+            <strong>Figure 2. WEGE Design and Guided Filter Analysis.</strong> 
+            The Wavelet-Energy-Guided Encoding (WEGE) module in (c) computes region-adaptive wavelet energy scores and integrates 
+            them into the network to enable precise frequency selection and adaptive band control. In (d), the Guided Filter 
+            hyperparameters affect the stability of the pixel-wise score map W̃b; without filtering, score discontinuities appear 
+            as visible artifacts in the final RGB output. Using r = 6 and ϵ = 1e-5 provides a balanced response, reducing 
+            discontinuities while retaining sharp structural information.
+          </figcaption>
+        </figure>
       </div>
     </div>
   </div>
